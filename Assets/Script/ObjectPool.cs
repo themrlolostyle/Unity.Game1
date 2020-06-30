@@ -9,13 +9,13 @@ public class ObjectPool : MonoBehaviour
 
     private List<GameObject> _pool = new List<GameObject>();
 
-    protected void Initialize(GameObject prefab, int howMuch)
+    protected void Initialize(GameObject prefab, int count)
     {
         _camera = Camera.main;
 
-        for (int i = 0; i < howMuch; i++)
+        for (int i = 0; i < count; i++)
         {
-            GameObject spawned = Instantiate(prefab, transform.position, Quaternion.identity);
+            GameObject spawned = Instantiate(prefab);
             spawned.SetActive(false);
 
             _pool.Add(spawned);
@@ -31,18 +31,9 @@ public class ObjectPool : MonoBehaviour
 
     public void DisableObjectAbroadScreen()
     {
-        foreach (var item in _pool)
+        foreach (var item in _pool.Where(item => item.activeSelf == true && _camera.WorldToViewportPoint(item.transform.position).x < 0))
         {
-            if (item.activeSelf == true)
-            {
-                Vector3 point = _camera.WorldToViewportPoint(item.transform.position);
-
-                if (point.x < 0)
-                {
-                    item.SetActive(false);
-                }
-            }
+            item.SetActive(false);
         }
     }
-
 }

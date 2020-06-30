@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Ball : MonoBehaviour
 {
-    public event UnityAction<int> ScoreChanger;
+    public event UnityAction<int> ScoreChanging;
 
     private int _score;
 
@@ -14,8 +14,8 @@ public class Ball : MonoBehaviour
         if(other.gameObject.TryGetComponent<Coin>(out Coin coin))
         {
             _score++;
-            ScoreChanger?.Invoke(_score);
-            coin.gameObject.SetActive(false);
+            ScoreChanging?.Invoke(_score);
+            coin.PickUp();
         }
     }
 }

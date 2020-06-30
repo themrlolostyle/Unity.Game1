@@ -10,16 +10,15 @@ public class Score : MonoBehaviour
 
     private void OnEnable()
     {
-        _ball.ScoreChanger += OnScoreChange;
+        _ball.ScoreChanging += OnScoreChanging;
     }
 
     private void OnDisable()
     {
-        _ball.ScoreChanger -= OnScoreChange;
-
+        _ball.ScoreChanging -= OnScoreChanging;
     }
 
-    private void OnScoreChange(int score)
+    private void OnScoreChanging(int score)
     {
         _coinCountText.text = score.ToString();
     }

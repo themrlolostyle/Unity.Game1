@@ -739,7 +739,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2891901113536099324, guid: 7afaab66dfb0544eab57c4d4e38c77d7, type: 3}
-  _howMuch: 10
+  _howMany: 5
+  _howManyCreatePrefab: 1
   _timeToSpawn: 3
 --- !u!114 &1790564111
 MonoBehaviour:
@@ -754,7 +755,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 154146538429971163, guid: 3ab8f56c317f0482cb64632718af98e7, type: 3}
-  _howMuch: 20
+  _howMany: 20
+  _howManyCreatePrefab: 5
   _timeToSpawn: 8
 --- !u!1 &2096725279
 GameObject:
