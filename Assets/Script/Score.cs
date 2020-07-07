@@ -5,17 +5,17 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] private Ball _ball;
+    [SerializeField] private BallWallet _ball;
     [SerializeField] private TMP_Text _coinCountText;
 
     private void OnEnable()
     {
-        _ball.ScoreChanging += OnScoreChanging;
+        _ball.ScoreChanged += OnScoreChanging;
     }
 
     private void OnDisable()
     {
-        _ball.ScoreChanging -= OnScoreChanging;
+        _ball.ScoreChanged -= OnScoreChanging;
     }
 
     private void OnScoreChanging(int score)

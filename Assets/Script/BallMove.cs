@@ -16,12 +16,11 @@ public class BallMove : MonoBehaviour
 
     private void Update()
     {
-        _rigidbody.AddForce(Vector3.right);
+        _rigidbody.AddForce(new Vector3(_speed, 0, 0));
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _rigidbody.AddForce(Vector3.up * _powerOfJump);
         }
     }
-
 }

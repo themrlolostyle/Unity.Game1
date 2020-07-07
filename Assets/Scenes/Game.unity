@@ -703,8 +703,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1790564107}
-  - component: {fileID: 1790564109}
-  - component: {fileID: 1790564111}
+  - component: {fileID: 1790564110}
+  - component: {fileID: 1790564108}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -726,7 +726,7 @@ Transform:
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1790564109
+--- !u!114 &1790564108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -735,29 +735,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1790564106}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d3121b1d3c348a89e12b509ad79c3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 2891901113536099324, guid: 7afaab66dfb0544eab57c4d4e38c77d7, type: 3}
-  _howMany: 5
-  _howManyCreatePrefab: 1
-  _timeToSpawn: 3
---- !u!114 &1790564111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790564106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358e858c29c844799a10e1f1c7ce6d12, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f9a0b22857e84074af82b810672fb9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 154146538429971163, guid: 3ab8f56c317f0482cb64632718af98e7, type: 3}
-  _howMany: 20
-  _howManyCreatePrefab: 5
+  _howManyCreate: 15
+  _howManySpawn: 5
   _timeToSpawn: 8
+--- !u!114 &1790564110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790564106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9a0b22857e84074af82b810672fb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2891901113536099324, guid: 7afaab66dfb0544eab57c4d4e38c77d7, type: 3}
+  _howManyCreate: 5
+  _howManySpawn: 1
+  _timeToSpawn: 3
 --- !u!1 &2096725279
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,6 +890,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552057192471208877, guid: e5ca6d124731e45e192ed280aec62467,
+        type: 3}
+      propertyPath: _speed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5ca6d124731e45e192ed280aec62467, type: 3}

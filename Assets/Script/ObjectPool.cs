@@ -31,9 +31,15 @@ public class ObjectPool : MonoBehaviour
 
     public void DisableObjectAbroadScreen()
     {
-        foreach (var item in _pool.Where(item => item.activeSelf == true && _camera.WorldToViewportPoint(item.transform.position).x < 0))
+        var activeItem = _pool.Where(item => item.activeSelf == true && PositionOnScreen(item.transform) < 0);
+        foreach (var item in activeItem)
         {
             item.SetActive(false);
         }
+    }
+
+    private float PositionOnScreen(Transform transform)
+    {
+        return _camera.WorldToViewportPoint(transform.position).x;
     }
 }

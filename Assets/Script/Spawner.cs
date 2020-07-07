@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Spawner : ObjectPool
+public class Spawner : ObjectPool
 {
     [SerializeField] private GameObject prefab;
     [SerializeField] private int _howManyCreate;
     [SerializeField] private int _howManySpawn;
-
-    [SerializeField] protected int _timeToSpawn;
+    [SerializeField] private int _timeToSpawn;
     
-
     private void Start()
     {
         Initialize(prefab, _howManyCreate);
