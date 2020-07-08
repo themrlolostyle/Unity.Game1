@@ -28,18 +28,4 @@ public class ObjectPool : MonoBehaviour
 
         return result != null;
     }
-
-    public void DisableObjectAbroadScreen()
-    {
-        var activeItem = _pool.Where(item => item.activeSelf == true && PositionOnScreen(item.transform) < 0);
-        foreach (var item in activeItem)
-        {
-            item.SetActive(false);
-        }
-    }
-
-    private float PositionOnScreen(Transform transform)
-    {
-        return _camera.WorldToViewportPoint(transform.position).x;
-    }
 }
