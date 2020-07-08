@@ -28,6 +28,7 @@ public class Spawner : ObjectPool
                     item.transform.position = new Vector3(transform.position.x + i, transform.position.y, transform.position.z);
                 }
             }
+            DisableObjectAbroadScreen();
         }
     }
 }
