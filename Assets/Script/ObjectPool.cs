@@ -31,9 +31,11 @@ public class ObjectPool : MonoBehaviour
 
     public void DisableObjectAbroadScreen()
     {
+        float deadLinePosX = _camera.ScreenToWorldPoint(new Vector3(0, 0, -(_camera.transform.position.z))).x;
+
         foreach (var item in _pool)
         {
-            if (_camera.WorldToScreenPoint(item.transform.position).x < 0)
+            if (item.transform.position.x < deadLinePosX)
             {
                 item.SetActive(false);
             }
